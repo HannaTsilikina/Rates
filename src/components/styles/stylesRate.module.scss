@@ -41,10 +41,6 @@ h2 {
   }
 }
 .red {
-  transition: transform 0.25s ease;
-  -webkit-transform: scale(1.15);
-  transform: scale(1.15);
-  z-index: 100;
   h2 {
     background-color: rgb(190, 67, 37);
   }
@@ -68,10 +64,7 @@ h2 {
     background-color: rgb(210, 210, 210);
   }
 }
-.blue,
-.black,
-.green,
-.red {
+.card {
   @include flexCenter();
   flex-direction: column;
   width: 100%;
@@ -96,4 +89,10 @@ h2 {
   height: 50px;
   padding: 5px 0px;
   border: $border;
+}
+.active {
+  transition: transform 0.25s ease;
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+  z-index: 100;
 }

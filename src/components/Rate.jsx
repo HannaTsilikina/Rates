@@ -1,8 +1,22 @@
+import { useState } from "react";
 import styles from "./styles/stylesRate.module.css";
 
 function Rate(props) {
+  const [active, setActive] = useState(false);
+  const handleClicked = () => {
+    setActive(!active);
+  };
+
   return (
-    <div className={styles[props.color]}>
+    <div
+      onMouseEnter={handleClicked}
+      onMouseLeave={handleClicked}
+      className={
+        active
+          ? `${styles.card} ${styles[props.color]} ${styles.active}`
+          : `${styles.card} ${styles[props.color]}`
+      }
+    >
       <h2 className={styles.h2}>{props.rateName}</h2>
       <div className={styles.price}>
         <div>руб</div>
